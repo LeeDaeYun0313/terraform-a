@@ -37,3 +37,23 @@ resource "aws_subnet" "ldy_pric" {
     Name = "ldy-pric"
   }
 }
+
+resource "aws_subnet" "ldy_pridba" {
+  vpc_id = aws_vpc.ldy_vpc.id
+  cidr_block = "10.0.4.0/24"
+  availability_zone = "ap-northeast-2a"
+
+  tags= {
+    Name = "ldy-pridba"
+  }
+}
+
+resource "aws_subnet" "ldy_pridbc" {
+  vpc_id = aws_vpc.ldy_vpc.id
+  cidr_block = "10.0.5.0/24"
+  availability_zone = "ap-northeast-2c"
+
+  tags= {
+    Name = "ldy-pridbc"
+  }
+}
