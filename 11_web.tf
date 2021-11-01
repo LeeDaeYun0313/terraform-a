@@ -3,7 +3,7 @@ data "aws_ami" "amzn" {
     
     filter {
         name    ="name"
-        values  = ["amzn2-ami-hvm-*-x86_64-ebs"]
+        values  = ["amzn2-ami-hvm-*-x86_64-gp2"]
     }
 
     filter {
@@ -16,7 +16,7 @@ data "aws_ami" "amzn" {
 }
 
 resource "aws_instance" "ldy_weba" {
-    ami                         = data.aws_ami.amzn.id
+    ami                         = "ami-0e4a9ad2eb120e054"
     instance_type               = "t2.micro"
     key_name                    = "tf-key"
     vpc_security_group_ids      = [aws_security_group.ldy_websg.id]

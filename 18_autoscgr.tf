@@ -14,6 +14,5 @@ resource "aws_autoscaling_group" "ldy_autogroup" {
     force_delete                = true
     launch_configuration        = aws_launch_configuration.ldy_lacf.name
     vpc_zone_identifier         = [aws_subnet.ldy_puba.id,aws_subnet.ldy_pubc.id]
-    
-  
+
 }

@@ -5,3 +5,5 @@ resource "aws_autoscaling_attachment" "ldy_autoattach" {
     alb_target_group_arn   = aws_lb_target_group.ldy_lbtg.arn
   
 }
+
+//확인해보면 lb 대상그룹에 인스턴스 3개가 붙어 있어야 한다.
